@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo.component';
+import { TextLineDirective } from './text-line.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoComponent,
+    TextLineDirective
   ],
   imports: [
     BrowserModule,
