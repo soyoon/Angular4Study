@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-sm-6 col-md-6 col-sm-offset-2 col-md-offset-2">
+      <form (ngSubmit)="onAddTodoList()" #form="ngForm">
+        <div
+          id="todo-input"
+          ngModelGroup="todoData"
+          #todoData="ngModelGroup">
+          <div class="form-group">
+            <h1 for="todo">Todo List</h1>
+            <input
+              type="text"
+              id="todo"
+              class="form-control"
+              ngModel
+              name="todo"
+              required>
+          </div>
+        </div>
+      </form>
+      <div *ngIf="submitted">
+        <ul class="list-group" *ngFor="let todo of todolist; let i = index">
+          <li class="list-group-item" [ngStyle]="{'text-decoration' : + todo.checked ? 'line-through': ''}" >
+            <input type="checkbox" class="form-check-input" name="check" ngModel [value]="checked" required (click)="onCheckTodo(i)">
+            {{todo.todo}}
+            <button class="btn-delete-todo" (click)="onDeleteTodo(i)">X</button>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="todolist.length > 0">{{todolist.length}} items left</div>
+    </div>
+  </div>
+</div>

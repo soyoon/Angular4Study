@@ -1,0 +1,9 @@
+.btn-delete-todo {
+  background: transparent;
+  border: transparent;
+  color: lightgray;
+}
+
+.list-group-item {
+  font-size: 16pt;
+}
